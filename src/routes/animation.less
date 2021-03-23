@@ -1,0 +1,77 @@
+/**
+  页面转场动画
+ */
+
+.main {
+  // position: fixed;
+  // top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+}
+
+.forward-enter {
+  &:extend(.main);
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.forward-enter-active {
+  &:extend(.main);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: all 300ms ease-in;
+}
+
+.forward-exit {
+  &:extend(.main);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.forward-exit-active {
+  &:extend(.main);
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: all 300ms ease-in;
+}
+
+.back-enter {
+  &:extend(.main);
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.back-enter-active {
+  &:extend(.main);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: all 300ms ease-in;
+}
+
+.back-exit {
+  &:extend(.main);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.back-exit-active {
+  &:extend(.main);
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+  transition: all 300ms ease-in;
+}
+
+.animate-scaleOut {
+  animation: scaleOut 0.6s infinite ease-in-out;
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
