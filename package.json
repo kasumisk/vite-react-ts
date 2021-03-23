@@ -11,6 +11,7 @@
     "@rematch/immer": "^2.0.1",
     "@rematch/loading": "^2.0.1",
     "@rematch/updated": "^2.0.1",
+    "@types/node": "^14.14.35",
     "immer": "^9.0.1",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",

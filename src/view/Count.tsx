@@ -1,6 +1,7 @@
 import React from 'react'
 import { RootState, Dispatch } from '../store'
 import { useDispatch, useSelector } from 'react-redux'
+import styles from './css/count.module.less';
 
 const Count = () => {
     const countState = useSelector((state: RootState) => state.count)
@@ -16,7 +17,7 @@ const Count = () => {
       dispatch.count.incrementAsync(1)
     }
     return (
-      <div>
+      <div className={styles.container}>
         The count is {countState.count}
         <button onClick={increment}>increment</button>
         <button onClick={incrementAsync}>incrementAsync</button>

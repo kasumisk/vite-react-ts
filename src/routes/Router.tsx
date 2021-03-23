@@ -16,8 +16,8 @@ import {
 import './animation.less';
 
 import routes from "./routes";
-import Count from '../view/Count';
-import Todo from '../view/Todo';
+import Count from '/@/view/Count';
+import Todo from '/@/view/Todo';
 
 
 export default function AnimationExample() {
