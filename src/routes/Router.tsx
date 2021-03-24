@@ -14,28 +14,21 @@ import {
   useHistory,
 } from "react-router-dom";
 import './animation.less';
-
+import renderRoutes from './renderRoutes/renderRoutes';
 import routes from "./routes";
-import Count from '/@/view/Count';
-import Todo from '/@/view/Todo';
 
 
-export default function AnimationExample() {
+export default function RouterContainer() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-        </ul>
-      </nav>
+      <ul>
+        <li>
+          <Link to="/count">count</Link>
+        </li>
+        <li>
+          <Link to="/todo">todo</Link>
+        </li>
+      </ul>
       <Switch>
         <Route exact path="/">
           <Redirect to="/count" />
@@ -56,8 +49,7 @@ const ANIMATION_MAP: any = {
 function AnimationApp() {
   const location = useLocation();
   const history = useHistory();
-  console.log(location)
-  console.log(history)
+  const nodeRef = React.useRef(null);
   return (
     <TransitionGroup
       className="main"
@@ -66,18 +58,18 @@ function AnimationApp() {
       }
     >
       <CSSTransition
+        nodeRef={nodeRef}
         key={location.key}
         classNames="fade"
         timeout={300}
       >
-        <Switch location={location}>
-          <Route path="/about">
-            <Count />
-          </Route>
-          <Route path="/users">
-            <Todo />
-          </Route>
-        </Switch>
+        <div ref={nodeRef}>
+          <Router>
+          {renderRoutes({
+            routes: routes
+          })}
+          </Router>
+        </div>
       </CSSTransition>
     </TransitionGroup>
   );

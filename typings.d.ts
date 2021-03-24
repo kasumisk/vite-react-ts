@@ -8,6 +8,7 @@ declare module '*.svg' {
   const url: string;
 }
 declare module 'react-router-dom';
+declare module 'react-router';
 declare module 'react-transition-group';
 
 declare var BUILD_COUNTRY: string;
