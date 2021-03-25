@@ -1,9 +1,5 @@
-
-import React from "react";
-import {
-  TransitionGroup,
-  CSSTransition
-} from "react-transition-group";
+import React from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,11 +8,10 @@ import {
   Redirect,
   useLocation,
   useHistory,
-} from "react-router-dom";
+} from 'react-router-dom';
 import './animation.less';
 import renderRoutes from './renderRoutes/renderRoutes';
-import routes from "./routes";
-
+import routes from './routes';
 
 export default function RouterContainer() {
   return (
@@ -44,16 +39,17 @@ export default function RouterContainer() {
 const ANIMATION_MAP: any = {
   PUSH: 'forward',
   POP: 'back',
-}
+};
 
 function AnimationApp() {
   const location = useLocation();
   const history = useHistory();
   const nodeRef = React.useRef(null);
+  console.log(location.key)
   return (
     <TransitionGroup
       className="main"
-      childFactory={(child:any) =>
+      childFactory={(child: any) =>
         React.cloneElement(child, { classNames: ANIMATION_MAP[history.action] })
       }
     >
@@ -64,11 +60,9 @@ function AnimationApp() {
         timeout={300}
       >
         <div ref={nodeRef}>
-          <Router>
-          {renderRoutes({
-            routes: routes
-          })}
-          </Router>
+            {renderRoutes({
+              routes: routes,
+            })}
         </div>
       </CSSTransition>
     </TransitionGroup>

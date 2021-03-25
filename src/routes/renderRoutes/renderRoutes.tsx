@@ -1,7 +1,5 @@
 import React, { createElement, FunctionComponent } from 'react';
-import {
-  Redirect,
-} from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import Switch from './Switch';
 import Route from './Route';
 
@@ -23,7 +21,6 @@ export interface IRoute {
   [k: string]: any;
 }
 
-
 interface IOpts {
   routes: IRoute[];
   plugin?: Plugin;
@@ -40,7 +37,6 @@ interface IGetRouteElementOpts {
   index: number;
   opts: IOpts;
 }
-
 
 function render({
   route,
@@ -76,7 +72,7 @@ function render({
 
     // route.wrappers
     if (wrappers) {
-      console.log(route)
+      console.log(route);
       let len = wrappers.length - 1;
       while (len >= 0) {
         ret = createElement(wrappers[len], newProps, ret);
