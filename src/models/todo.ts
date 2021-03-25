@@ -1,5 +1,5 @@
 import { createModel } from '@rematch/core'
-import { RootModel } from './models'
+import { RootModel } from '../store/models'
 
 export const todo = createModel<RootModel>()({
     state: [

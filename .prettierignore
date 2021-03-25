@@ -1,0 +1,15 @@
+**/node_modules/**
+package.json
+
+# fixtures
+**/fixtures/**
+
+# templates
+public/*
+
+# docs
+# **/*.md
+
+#
+/dist
+

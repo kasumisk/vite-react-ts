@@ -1,6 +1,6 @@
 import { Models } from '@rematch/core'
-import { count } from './count'
-import { todo } from './todo'
+import { count } from '../models/count'
+import { todo } from '../models/todo'
 
 export interface RootModel extends Models<RootModel> {
     count: typeof count,

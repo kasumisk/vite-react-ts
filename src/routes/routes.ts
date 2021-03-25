@@ -31,7 +31,7 @@ const routes: IRoute[]= [
         // wrappers: Cart,
         routes: [
           {
-            wrappers: [Cart],
+            // wrappers: [Cart],
             path: "/layout/cart/test",
             component: Test
           }

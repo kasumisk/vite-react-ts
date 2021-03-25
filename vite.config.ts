@@ -3,6 +3,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
+  publicDir: './public',
   plugins: [reactRefresh()],
   resolve: {
     alias:{
