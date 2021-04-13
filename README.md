@@ -1,5 +1,5 @@
 ### lib
-react-router-dom, rematch, react-transition-group, 
+react-router-dom, rematch, react-transition-group, postcss, tailwindcss
 
 ### vite
 ##### alias  use 
